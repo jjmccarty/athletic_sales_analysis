@@ -30,10 +30,32 @@ This will convert the data from an ```object``` to a ```DateTime``` and can be v
 
 
 ## Section 2
+Section 2 asks us to determine the answer to the following question:
+> Which region/city/state sold the most units of product.
+
+This utilizes the ```GroupBy``` method and the ```pivot_table``` method from our DataFrame to order our data set based a specified index of data and aggregating the data we wish we to interrogate.
+
+Both the ```GropuBy``` and ```pivot_table``` methods are used to demonstrated that both options are viable for data manipulation and evaluation in the same way. 
+
+For this exercise we are grouping data by ``` region, state, city ``` and finding the ```sum``` or total count of the ```units_sold``` for that grouping. 
+
+Data is sorted highest to lowest for output
 
 ## Section 3
 
+Section 3 asks the following:
+> Which region/state/city has the most total sales?
+
+Section 3 provides a repeat of the section 2 exercise, however we substitue the ```total_sales``` as the data to evaluate to find our answer.  
+
 ## Section 4
+
+In section 4 we want to know
+> What retailer had the most total sales by region/state/city?
+
+This is simply a further extension of our Section 3 exercise, however we add an additional grouping value of ```retailer``` proving for an index of ```retailer, region, state, city```.  
+
+Otherwise our exercise is similar to the prior sections. 
 
 ## Section 5
 
