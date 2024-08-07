@@ -58,7 +58,38 @@ This is simply a further extension of our Section 3 exercise, however we add an 
 Otherwise our exercise is similar to the prior sections. 
 
 ## Section 5
+In section 5 our exercise we are looking as some analysis that is drilled down a little further.  In this case we want to know 
+> What retailer sold the most units of products by region/state/city for Women's Athletic Footwear specifically. 
+
+This requires that further filter the data by only ```product``` that is ```Women's Athletic Footwear```.  To do this we are using the ```.loc``` option on the DataFrame for the ```product``` data. 
+
+When we determine how we want to identify these products it may be useful to understand how structured our data is.  In this case we are assuming the data has some standardization in how it is collected and are performing the following on the DataFrame
+
+> ``` df.loc[df['product']=="Women's Athlethic Footwear']```
+
+If our dataset was not standardized it might make more sense to evaluate the string contents for similar data rather than a hard ==.  Identifying the unique values in the ```product``` data coul assist with evaluating the standardization of the data in this case. 
+
+From this point analysis of the data is simply utilzing the ```GroupBy``` and ```pivot_table``` as we have in prior exercises to answer the question asked. 
 
 ## Section 6
 
+Section 6 asks:
+> What is the day with the most total sales for Women's Athletic Footwear?
+
+To perform this analysis we can utilized the DataFrame created in section 5 and create a pivot table with an ```index``` of the ```invoice_date``` and utilize the ```sum``` for the ```total_sales```
+
+We further want to know the total sales for each day, so we utilze the ```resample``` method on the DataFrame to organize the data by the Day 
+
+>```df.resample('D').sum()```
+
 ## Section 7
+
+Section 7 allows us to further resample the data based on our dates.  In this case we are asking the question:
+
+> What week had the most sales for Women's Athletic Footwear?
+
+In this case we are using the ```resample``` method again, however we are specifing ```W``` as the rule to organization the data by week 
+
+> ```df.resample('W').sum()```
+
+
